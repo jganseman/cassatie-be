@@ -15,3 +15,4 @@ You need to have Firefox installed
 1. Clone this repository
 2. Navigate to its main directory using the terminal
 3. Run ```python3 cassweb_download.py``` --> Firefox will launch and download a bunch of pdf files into a subfolder named ```cassweb```.
+4. Run ```python3 cassweb_extract_text.py``` --> Will extract all text from these files into a subfolder ```cassweb/text-xpdf```.
