@@ -102,3 +102,6 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# ADDED FOR CASSATIE PROJECT: data folder
+cassweb/
