@@ -14,4 +14,4 @@ You need to have Firefox installed
 ## Running the project
 1. Clone this repository
 2. Navigate to its main directory using the terminal
-3. Run ```./cassweb_download.py``` --> Firefox will launch and download a bunch of pdf files into a subfolder named ```cassweb```.
+3. Run ```python3 cassweb_download.py``` --> Firefox will launch and download a bunch of pdf files into a subfolder named ```cassweb```.

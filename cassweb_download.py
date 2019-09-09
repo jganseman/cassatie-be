@@ -10,10 +10,10 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
-from os import path, makedirs, listdir, rename
+from os import path, makedirs, listdir, rename, getcwd
 from urllib import request, error
 
-dataroot = os.getcwd()
+dataroot = getcwd()
 dataset = "cassweb"
 target_dir = path.join(dataroot, dataset)
 
@@ -38,7 +38,7 @@ if not path.exists(target_dir):
 for myhref in hrefs:
     #myhref = mylink.get_attribute("href")
     if "pdf" in myhref:
-        print(myhref)
+        print("Accessing ", myhref)
         filename = path.basename(myhref)
         if not path.exists(path.join(target_dir, filename)):
             try:
