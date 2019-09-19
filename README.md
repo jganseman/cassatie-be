@@ -60,4 +60,10 @@ This still leaves enough to build a language model for this particular branch of
 ## Notes and Future Work
 
 * Still need to add some code to demo the actual NLP experiments.
+* No annotations yet!
 * Seems like arrests can also be downloaded individually from links of the form: http://jure.juridat.just.fgov.be/pdfapp/download_blob?idpdf=N-20150217-5 where the idpdf parameter contains: N/F (language), date of arrest, sequential number of arrest, starting from 1, up to ? Is there a potential here to scrape a bigger dataset? However, these might be only partially or not anonymized.  
+
+
+## Contact
+
+Using this at a hackathon or some other project? Get in touch so I can at least retweet - @jganseman
