@@ -4,12 +4,12 @@ Dutch language NLP dataset for legaltech applications
 
 ## Introduction
 
-LegalTech is a booming field, a very text intensive one too. The text is often complicated and drawn out (nobody reads court filings for some light bedtime reading), 
+Legal texts are often complicated and drawn out (nobody reads court filings for some light bedtime reading), 
 which makes that existing language models, largely built on accessible text from Wikipedia or social media, don't really capture the peculiarities of "legalese".
 Large databases of "real-life" legal documents are rare, not in the least because of obvious privacy issues, and especially in languages other than English.
 
-In the context of doing some experiments with Named Entity Recognition on Dutch language legal texts in Belgium, I found a dataset published by the Cassation court of Belgium,
-which the scripts in this repository scrape and preprocess into a set of 9786 text files of individual decisions by that court. Could be useful as (part of a) 
+In the context of doing some experiments with Named Entity Recognition on Dutch language legal texts in Belgium, I found a set of PDFs published by the Cassation court of Belgium,
+which the scripts in this repository scrape and preprocess into a set of 9786 individual decisions by that court in plain text format. Could be useful as (part of a) 
 training set for a Dutch language model tailored to legal applications.
 
 
@@ -35,7 +35,6 @@ A PyPDF alternative is available in the code. To use that, run ```conda install 
 A pdf2txt alternative is also available: to use, run ```conda install -c conda-forge pdfminer.six``` and uncomment the appropriate section in ```cassweb_extract_text.py```.
 
 
-
 ## Running the project
 
 1. Clone this repository
@@ -49,17 +48,16 @@ A pdf2txt alternative is also available: to use, run ```conda install -c conda-f
 
 The data only consists of Dutch-language verdicts from the Belgian cassation court, which is limited in its scope: it only judges whether a trial has followed the correct procedures.
 It never judges about the content of the actual case: for that, it will refer the case to a different court (or not if it does not find any procedural mistakes).
-The content of the text is therefore highly about procedural matters.
+The content of this dataset is therefore highly about procedural matters.
 
-While the court archives date back for centuries, the text that can be reliably extracted from the PDFs (has digital-native origins) starts from the year 2000 onwards.
+While the court archives date back for centuries, the text that can be reliably extracted from the PDFs (i.e. has digital-native origins) starts from the year 2000 onwards.
 
-Not all rulings can be extracted separately: formatting errors in the source files make that splitting the books into individual cases is not always obvious.
-For now I just roughly deleted cases that I couldn't split off automatically, so the final dataset lacks 5% to 10% of the total published number of cases. 
+Not all rulings can be extracted separately: formatting errors in the source files make that splitting the files into individual cases is not always obvious.
+For now I just roughly deleted cases that I couldn't split off automatically, so the final dataset lacks 5% to 10% of the total number of cases present in the original PDFs. 
 This still leaves enough to build a language model for this particular branch of judicial texts.
 
 
-## Notes
+## Notes and Future Work
 
-Seems like arrests can also be downloaded individually from links of the form: http://jure.juridat.just.fgov.be/pdfapp/download_blob?idpdf=N-20150217-5
-where the idpdf parameter contains: N/F (language), date of arrest, sequential number of arrest, starting from 1, up to ? 
-Potential to scrape a bigger dataset? However, these might be only partially or not anonymized.  
+* Still need to add some code to demo the actual NLP experiments.
+* Seems like arrests can also be downloaded individually from links of the form: http://jure.juridat.just.fgov.be/pdfapp/download_blob?idpdf=N-20150217-5 where the idpdf parameter contains: N/F (language), date of arrest, sequential number of arrest, starting from 1, up to ? Is there a potential here to scrape a bigger dataset? However, these might be only partially or not anonymized.  
